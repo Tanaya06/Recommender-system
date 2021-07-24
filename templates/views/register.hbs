@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <script>
+        function myfun(){
+            var a=document.getElementById("password").value;
+            var b=document.getElementById("email").value;
+
+            var regx=/^([a-zA-Z0-9\._])+@([a-zA-Z0-9])+.([a-z]+)(.[a-z]+)$/;
+            if(regx.email(b)){
+                document.getElementById("msg1").innerHTML="valid email";
+                x=1;
+            }else{
+                 document.getElementById("msg1").innerHTML="Invalid email";
+                x=0;
+            }
+            if(a==""){
+                document.getElementById("messages").innerHTML="** Please Fill Password";
+                 y=0;
+            }
+            if(a.length<5)
+            {
+                 document.getElementById("messages").innerHTML="** Password length must be greater than 5";
+                  z=0;
+
+            }
+            if(a.length>15)
+            {
+                 document.getElementById("messages").innerHTML="** Password length must be smaller than 15";
+                  z=0;
+            }
+            if(b.indexOf('@')<=0){
+                document.getElementById("msg1").innerHTML="** Invalid @ position";
+                p=0;
+            }
+            if(b.charAt(b.length-4)!='.'&&b.charAt(b.length-3)!='.')
+            {
+                 document.getElementById("msg1").innerHTML="** Invalid . position";
+                  s=0;
+
+            }
+            if(x!=0&&y!=0&&z!=0&&p!=0&&s!=0){
+                return true;
+            }return false;
+        }
+    </script>
+    {{>navbar}}
+    <div class="container register">
+                <div class="row">
+                    <div class="col-md-3 register-left">
+                        <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
+                        <h3>Welcome</h3>
+                        <p>Whatever you've got in mind,we've got inside!</p>
+                       
+                    </div>
+                    <div class="col-md-9 register-right">
+                        <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+                           
+                        </ul>
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                <h3 class="register-heading">Register Yourself</h3>
+                                <form onsubmit="return myfun()" action="/register" method="POST">
+                                <div class="row register-form">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="First Name *"
+                                             value="" name="firstname"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Last Name *" value=""
+                                             name="lastname"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" placeholder="Address *" value=""
+                                             name="address"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" class="form-control" placeholder="Password *" 
+                                            value="" name="password"id="password" />
+                                            <span id="messages" style="color: red;"></span><br>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="password" class="form-control"  placeholder="Confirm Password *" value="" 
+                                            name="confirmpassword"/>
+                                        </div>
+                                         
+                                       
+                                        
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <input type="email" class="form-control" placeholder="Your Email *" value=""
+                                            name="email"id="email" />
+                                            <span id="msg1"style="color: red;"></span>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" minlength="10" maxlength="10" name="phone" 
+                                            class="form-control" placeholder="Your Phone *" value="" />
+                                        </div>
+
+                                        
+                                        <input type="submit" class="btnRegister"  value="Register"/>
+                                    </div>
+                                </div>
+                                </form>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+</body>
+</html>

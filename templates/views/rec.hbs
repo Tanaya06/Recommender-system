@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Online-Shopping Web</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<style>
+        *{ padding:0; margin:0; box-sizing: border-box; font-family: sans-serif; }
+header{
+	width: 100%;
+	height: 100vh;
+}
+
+html{
+	scroll-behavior: smooth;
+}
+nav{
+	width: 100%;
+	height: 70px;
+	border-bottom: 1px solid grey;
+	box-shadow: 2px 0px 5px grey;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	position: fixed;
+	top:0;
+	z-index: 1;
+	background: white;
+}
+.logo{
+	font-size: 50px;
+	font-weight: bold;
+}
+
+.menu a{
+	text-decoration: none;
+	font-size: 20px;
+	color: black;
+	padding: 10px 20px;
+	margin:5px;
+	font-weight: bold;
+}
+.menu a:last-child{
+	background: black;
+	color: white;
+}
+.container{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transform-style: preserve-3d;
+	transform-origin: center;
+	perspective: 2000px;
+}
+
+.left{
+	flex-basis: 50%;
+	animation: animate 3s linear infinite;
+}
+.left img{
+	width: 100%;
+	padding-top: 100px;
+}
+
+@keyframes animate{
+	0%{
+		transform: scale(1.1);
+	}
+		50%{
+		transform: scale(1);
+	}
+		100%{
+		transform: scale(1.1);
+	}
+}
+
+.right{
+	flex-basis: 50%;
+	max-width: 400px;
+	margin-left: 100px;
+}
+
+.right h1{
+	font-size: 50px;
+}
+.right p{
+	font-size: 25px;
+	margin:20px 0px;
+}
+button{
+	background: black;
+	color: white;
+	font-weight: bold;
+	border: none;
+	outline: none;
+	padding: 10px 20px;
+	margin-bottom: 20px;
+}
+
+#featured{
+	padding: 50px 0px;
+	font-size: 30px;
+	text-align: center;
+
+}
+
+
+.wrapper{
+	display: grid;
+	grid-template-columns: repeat(4,20%);
+	grid-auto-rows: minmax(200px,auto);
+	grid-gap: 1em;
+	justify-content: center;
+	margin-top:10px;
+	align-items: center;
+}
+.wrapper>div{
+	border:1px solid grey;
+	position: relative;
+	overflow: hidden;
+}
+.wrapper> div img{
+	width: 100%;
+	
+}
+
+.box1{
+	grid-row: 1/3;
+	grid-column: 1/3;
+}
+
+.price{
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: black;
+	color: white;
+	font-size: 20px;
+
+}
+.wrapper> div img:hover{
+	transform: scale(1.2);
+	transition: 0.4s linear;
+}
+
+#man{
+	padding: 80px 0px;
+}
+
+.man-row{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+.man-box{
+	flex-basis: 15%;
+	box-shadow: 2px 3px 5px grey;
+	padding: 10px;
+	text-align: center;
+}
+
+.man-box img{
+	width: 100%;
+}
+.man-box h2{
+	margin:20px 0px;
+}
+.man-box h3{
+	background: black;
+	color: white;
+	padding: 10px;
+}
+.man-box:hover{
+	transform: translateY(-20px);
+	transition: 0.4s ease;
+}
+#women{
+	padding: 100px 0px;
+}
+#footer{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	background: black;
+	color: white;
+	padding: 10px;
+}
+
+
+
+
+
+		* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	background-image: url(https://images.pexels.com/photos/204262/pexels-photo-204262.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-position: center center;
+	height: 100vh;
+}
+.menu-area li a {
+	text-decoration: none;
+	color: #fff;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	display: block;
+	padding: 0 25px;
+	font-size: 14px;
+	line-height: 30px;
+	position: relative;
+	z-index: 1;
+}
+.menu-area li {
+	list-style: none;
+	display: inline-block;
+}
+.custom-padding {
+	padding-top: 25px;
+}
+nav {
+	position: relative;
+	padding: 10px 20px 10px 10px;
+	text-align: right;
+	z-index: 1;
+	background: #333;
+	margin: 0 auto;
+	width: calc(100% - 60px);
+}
+.logo {
+	width: 15%;
+	float: left;
+	text-transform: uppercase;
+	color: #fff;
+	font-size: 25px;
+	text-align: left;
+	padding-left: 2%;
+}
+.menu-area li a:hover {
+	background: tomato;
+	color: #fff;
+}
+nav:before {
+	position: absolute;
+	content: '';
+	left: 0;
+	top: 100%;
+	border-top: 10px solid #333;
+	border-right: 10px solid #333;
+	border-left: 10px solid transparent;
+	border-bottom: 10px solid transparent;
+}
+nav:after {
+	position: absolute;
+	content: '';
+	border-top: 10px solid #333;
+	border-left: 10px solid #333;
+	border-right: 10px solid transparent;
+	border-bottom: 10px solid transparent;
+	top: 100%;
+	right: 0;
+}
+	</style>
+</head>
+<body>
+<header id="home">
+	<nav>
+		<div class="logo">
+			Revolution
+		</div>
+		<ul class="menu-area">
+			<li>
+				<a href="/">Home</a>
+			</li>
+			<li>
+				<a href="/login">Login</a>
+			</li>
+			<li>
+				<a href="/register">Registration</a>
+			</li>
+			
+		</ul>
+	</nav>
+
+<div class="container">
+	<div class="left">
+		<img src="images/cat3.jpg">
+	</div>
+
+<br>
+
+	<div class="right">
+		<h1>Best Festival Offers</h1>
+		<p>
+			We are providing best quality materials. We have best quality clothes, shoes for man and womens.
+		</p>
+		<p>
+			50% Discount!!!
+		</p>
+		<button>Shop</button><br>
+	</div>
+</div>
+</header>
+<section id="featured">
+	<h1>Recommendations</h1>
+	<div class="wrapper">
+	<div class="box1">
+		<img src="images/product4.jpg">
+		<div class="price">Price: $50</div>
+	</div>
+		<div>
+		<img src="images/product5.jpg">
+		<div class="price">Price: $50</div>
+	</div>
+		<div>
+		<img src="images/product4.jpg">
+		<div class="price">Price: $50</div>
+	</div>
+		<div>
+		<img src="images/product5.jpg">
+		<div class="price">Price: $50</div>
+	</div>
+		<div>
+		<img src="images/product4.jpg">
+		<div class="price">Price: $50</div>
+	</div>
+</div>
+</section>
+
+
+
+
+
+
+
+
+<section id="women">
+
+	<div class="man-row">
+		<div class="man-box">
+			<img src="images/cat3.jpg">
+				<h2>Nike Ferr TR<br>$129.99</h2>
+			<h3>Add to cart </h3>
+		</div>
+		<div class="man-box">
+			<img src="images/product4.jpg">
+				<h2>Nike Ferr TR<br>$129.99</h2>
+			<h3>Add to cart </h3>
+		</div>
+		<div class="man-box">
+			<img src="images/product5.jpg">
+				<h2>Nike Ferr TR<br>$129.99</h2>
+			<h3>Add to cart </h3>
+		</div>
+		<div class="man-box">
+			<img src="images/product4.jpg">
+				<h2>Nike Ferr TR<br>$129.99</h2>
+			<h3>Add to cart </h3>
+		</div>
+	</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
